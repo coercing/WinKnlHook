@@ -1,6 +1,9 @@
-# WinKnlHook
+# WinKnlHook-Driver
 
 A 64-bit Windows 10/11 kernel-mode driver operating at Ring 0, designed for low-level memory operations, physical memory translation, signature scanning, and kernel-space mouse input simulation.
+
+> [!NOTE]
+> **Project Origin & Attribution**: This repository is a modified/edited version of an existing, third-party kernel driver and is not the original author's source. Modifications and updates have been made to adapt it for Windows 10 and 11 compatibility.
 
 > [!WARNING]
 > This driver contains critical stability bugs and skeleton modules. It is intended for educational and security research purposes only.
