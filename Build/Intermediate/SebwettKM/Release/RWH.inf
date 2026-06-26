@@ -1,0 +1,63 @@
+;
+; WinKnlHook.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = "Logitech"
+Class       = System
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %ManufacturerName%
+CatalogFile = WinKnlHook.cat
+DriverVer = 06/22/2026,20.52.53.620
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+WinKnlHook.sys = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NTamd64.10.0...16299
+
+[Standard.NTamd64.10.0...16299]
+%WinKnlHook.DeviceDesc% = WinKnlHook_Device, Root\WinKnlHook
+
+[WinKnlHook_Device.NT]
+CopyFiles = File_Copy
+
+[File_Copy]
+WinKnlHook.sys
+
+;-------------- Service installation
+[WinKnlHook_Device.NT.Services]
+AddService = WinKnlHook,%SPSVCINST_ASSOCSERVICE%, WinKnlHook_Service_Inst
+
+; -------------- WinKnlHook driver install sections
+[WinKnlHook_Service_Inst]
+DisplayName    = %WinKnlHook.SVCDESC%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\WinKnlHook.sys
+
+[WinKnlHook_Device.NT.Wdf]
+KmdfService = WinKnlHook, WinKnlHook_wdfsect
+
+[WinKnlHook_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName       = "Microsoft Corporation"
+DiskName               = "Windows Kernel Hook Installation Disk"
+WinKnlHook.DeviceDesc  = "Windows Kernel Hook Driver"
+WinKnlHook.SVCDESC     = "Windows Kernel Hook Service"

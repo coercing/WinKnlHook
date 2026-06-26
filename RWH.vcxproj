@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{41F48C67-20D7-73AD-862F-39554C67116A}</ProjectGuid>
+    <TemplateGuid>{1bc93793-694f-48fe-9372-81e2b05556fd}</TemplateGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration>Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">x64</Platform>
+    <RootNamespace>RWH</RootNamespace>
+    <WindowsTargetPlatformVersion>$(LatestTargetPlatformVersion)</WindowsTargetPlatformVersion>
+    <ProjectName>SebwettKM</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+    <Driver_SpectreMitigation>false</Driver_SpectreMitigation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>$(SolutionDir)..\Build\Debug\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\Intermediate\$(ProjectName)\Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <TargetName>WinKnlHook</TargetName>
+    <EnableInf2cat>false</EnableInf2cat>
+    <OutDir>Build\Release\</OutDir>
+    <IntDir>Build\Intermediate\$(ProjectName)\Release\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>false</VcpkgEnabled>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ControlFlowGuard>false</ControlFlowGuard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Inf Include="RWH.inf" />
+  </ItemGroup>
+  <ItemGroup>
+    <FilesToPackage Include="$(TargetPath)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\IoControl\IoControl.cpp" />
+    <ClCompile Include="Core\Utilities\Utility.cpp" />
+    <ClCompile Include="Init\DriverInit\Driverinit.cpp" />
+    <ClCompile Include="Init\Entry.cpp" />
+    <ClCompile Include="Modules\EAC\Decryption\Decryption.cpp" />
+    <ClCompile Include="Modules\EAC\FunctionBlocker\FunctionBlocker.cpp" />
+    <ClCompile Include="Modules\EAC\Functions\Functions.cpp" />
+    <ClCompile Include="Modules\EAC\Hooks\Hooks.cpp" />
+    <ClCompile Include="Modules\EAC\LogDisable\Log.cpp" />
+    <ClCompile Include="Modules\MemoryAccess\AllocateVirtual\AllocateVirtual.cpp" />
+    <ClCompile Include="Modules\MemoryAccess\FreeVirtual\FreeVirtual.cpp" />
+    <ClCompile Include="Modules\MemoryAccess\ProtectVirtual\ProtectVirtual.cpp" />
+    <ClCompile Include="Modules\MemoryAccess\QueryInformation\QueryInformation.cpp" />
+    <ClCompile Include="Modules\MemoryAccess\SwapVirtual\SwapVirtual.cpp" />
+    <ClCompile Include="Modules\MemoryAccess\WriteHandler\Write.cpp" />
+    <ClCompile Include="Modules\Memory\BaseAddress\Base.cpp" />
+    <ClCompile Include="Modules\Memory\EProcess\EProcess.cpp" />
+    <ClCompile Include="Modules\Memory\Peb\Peb.cpp" />
+    <ClCompile Include="Modules\Memory\PML4\PML4.cpp" />
+    <ClCompile Include="Modules\MemoryAccess\ReadHandler\Read.cpp" />
+    <ClCompile Include="Modules\MemoryAccess\RWX\RWX.cpp" />
+    <ClCompile Include="Modules\MouseMove\MouseMove.cpp" />
+    <ClCompile Include="Modules\Spoofer\Spoofer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\Crt\crt.h" />
+    <ClInclude Include="Core\Definitions\Define.h" />
+    <ClInclude Include="Core\Definitions\encrypt.h" />
+    <ClInclude Include="Core\Definitions\IoCodes.h" />
+    <ClInclude Include="Core\Definitions\WarningSuppress.h" />
+    <ClInclude Include="Core\IoControl\IoControl.h" />
+    <ClInclude Include="Core\RandomGUID.h" />
+    <ClInclude Include="Core\Resolver\Resolver.h" />
+    <ClInclude Include="Core\Symbols\Symbols.h" />
+    <ClInclude Include="Core\Utilities\Randomizer.h" />
+    <ClInclude Include="Core\Utilities\Utility.h" />
+    <ClInclude Include="Init\DriverInit\Driverinit.h" />
+    <ClInclude Include="Modules\EAC\Decryption\Decryption.h" />
+    <ClInclude Include="Modules\EAC\FunctionBlocker\FunctionBlocker.h" />
+    <ClInclude Include="Modules\EAC\Functions\Functions.h" />
+    <ClInclude Include="Modules\EAC\Hooks\Hooks.h" />
+    <ClInclude Include="Modules\EAC\LogDisable\Log.h" />
+    <ClInclude Include="Modules\MemoryAccess\AllocateVirtual\AllocateVirtual.h" />
+    <ClInclude Include="Modules\MemoryAccess\FreeVirtual\FreeVirtual.h" />
+    <ClInclude Include="Modules\MemoryAccess\ProtectVirtual\ProtectVirtual.h" />
+    <ClInclude Include="Modules\MemoryAccess\QueryInformation\QueryInformation.h" />
+    <ClInclude Include="Modules\MemoryAccess\SwapVirtual\SwapVirtual.h" />
+    <ClInclude Include="Modules\MemoryAccess\WriteHandler\Write.h" />
+    <ClInclude Include="Modules\Memory\BaseAddress\Base.h" />
+    <ClInclude Include="Modules\Memory\EProcess\EProcess.h" />
+    <ClInclude Include="Modules\Memory\Peb\Peb.h" />
+    <ClInclude Include="Modules\Memory\PML4\PML4.h" />
+    <ClInclude Include="Modules\MemoryAccess\ReadHandler\Read.h" />
+    <ClInclude Include="Modules\MemoryAccess\RWX\RWX.h" />
+    <ClInclude Include="Includes.h" />
+    <ClInclude Include="Modules\MouseMove\MouseMove.h" />
+    <ClInclude Include="Modules\PatternScan\PatternScan.h" />
+    <ClInclude Include="Modules\Spoofer\Spoofer.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="Core\ASM\module.asm" />
+    <MASM Include="Modules\MouseMove\mouse.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SebwettKM.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

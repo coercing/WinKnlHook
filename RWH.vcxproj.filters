@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Driver Files">
+      <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
+      <Extensions>inf;inv;inx;mof;mc;</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="RWH.inf">
+      <Filter>Driver Files</Filter>
+    </Inf>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\Utilities\Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IoControl\IoControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Memory\BaseAddress\Base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Memory\PML4\PML4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Init\Entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Init\DriverInit\Driverinit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\MemoryAccess\RWX\RWX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\MemoryAccess\ReadHandler\Read.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\EAC\LogDisable\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Memory\EProcess\EProcess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\MemoryAccess\WriteHandler\Write.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\EAC\Hooks\Hooks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\EAC\Decryption\Decryption.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\EAC\Functions\Functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\EAC\FunctionBlocker\FunctionBlocker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\MouseMove\MouseMove.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Spoofer\Spoofer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\MemoryAccess\SwapVirtual\SwapVirtual.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\MemoryAccess\QueryInformation\QueryInformation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\MemoryAccess\ProtectVirtual\ProtectVirtual.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\MemoryAccess\FreeVirtual\FreeVirtual.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\MemoryAccess\AllocateVirtual\AllocateVirtual.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Memory\Peb\Peb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\Utilities\Utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\IoControl\IoControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Definitions\Define.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Definitions\IoCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Memory\BaseAddress\Base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Memory\PML4\PML4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Init\DriverInit\Driverinit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Definitions\encrypt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\MemoryAccess\RWX\RWX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\MemoryAccess\ReadHandler\Read.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Crt\crt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\EAC\LogDisable\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Resolver\Resolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Symbols\Symbols.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Memory\EProcess\EProcess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\MemoryAccess\WriteHandler\Write.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\EAC\Hooks\Hooks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\EAC\Decryption\Decryption.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\EAC\Functions\Functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Definitions\WarningSuppress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\EAC\FunctionBlocker\FunctionBlocker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\MouseMove\MouseMove.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Spoofer\Spoofer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\MemoryAccess\SwapVirtual\SwapVirtual.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\MemoryAccess\QueryInformation\QueryInformation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\MemoryAccess\ProtectVirtual\ProtectVirtual.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\MemoryAccess\FreeVirtual\FreeVirtual.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\MemoryAccess\AllocateVirtual\AllocateVirtual.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Memory\Peb\Peb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\RandomGUID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Utilities\Randomizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\PatternScan\PatternScan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="Core\ASM\module.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="Modules\MouseMove\mouse.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SebwettKM.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
